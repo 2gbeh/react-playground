@@ -1,12 +1,17 @@
-import { sql } from "@vercel/postgres";
+import { pg } from "@/lib/vercel/postgres.config";
 
 export class ProductsService {
   // QUERY
   static async getAll() {
-    const likes = 100;
-    const { rows } = await sql`SELECT * FROM posts WHERE likes > ${likes};`;
+    const { rows } =
+      await pg.sql`SELECT * FROM shopera_products ORDER BY id DESC`;
+    return JSON.stringify(rows);
   }
-  static async getById() {}
+  static async getById(id: number) {
+    const { rows } =
+      await pg.sql`SELECT * FROM shopera_products WHERE id=${id}`;
+    return JSON.stringify(rows);
+  }
   static async search() {}
   static async filter() {}
   static async paginate() {}

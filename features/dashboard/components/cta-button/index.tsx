@@ -5,8 +5,8 @@ interface IProps {
   onClick?: () => void;
 }
 
-const AddProductButton: React.FC<IProps> = ({ onClick = () => undefined }) => {
-  console.log("🚀 ~ AddProductButton");
+const CTAButton: React.FC<IProps> = ({ onClick = () => undefined }) => {
+  console.log("🚀 ~ CTAButton");
   // renders
   return (
     <button
@@ -19,4 +19,4 @@ const AddProductButton: React.FC<IProps> = ({ onClick = () => undefined }) => {
   );
 };
 
-export default React.memo(AddProductButton);
+export default React.memo(CTAButton);
