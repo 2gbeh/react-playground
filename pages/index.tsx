@@ -1,15 +1,24 @@
-import Header from "@/components/atoms/header";
+import type { ReactElement } from "react";
+import type { NextPageWithLayout } from "./_app";
+
+import DashboardLayout from "@/components/layouts/dashboard-layout";
 import Ribbon from "@/components/atoms/ribbon";
 
-export default function Home() {
+const Dashboard: NextPageWithLayout = () => {
+  console.log("🚀 ~ Dashboard");
+  // renders
   return (
-    <div className="min-h-full">
-      <Header />
+    <>
       <Ribbon title="Dashboard" />
       <main>
-        <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-        </div>
+        <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8"></div>
       </main>
-    </div>
+    </>
   );
-}
+};
+
+Dashboard.getLayout = function getLayout(page: ReactElement) {
+  return <DashboardLayout>{page}</DashboardLayout>;
+};
+
+export default Dashboard;
