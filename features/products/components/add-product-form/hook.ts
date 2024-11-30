@@ -6,9 +6,9 @@ import { productsActions } from "@/store/products/products.slice";
 import { ROUTE } from "@/constants/ROUTE";
 
 export function useAddProductForm(onClose: () => void) {
-  const productsSelector = useAppSelector((state) => state.products);
   const dispatch = useAppDispatch();
-  const [submitting, setSubmitting] = useState(false);
+  const productsSelector = useAppSelector((state) => state.products);
+  const [submitting, setSubmitting] = useState(true);
   //
   async function onSubmit(ev: FormEvent<HTMLFormElement>) {
     ev.preventDefault();
