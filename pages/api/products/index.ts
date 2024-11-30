@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { ProductsService } from "@/features/products";
+import { ProductsService } from "@/store/products/products.service";
 
 export default async function productsHandler(
   req: NextApiRequest,
