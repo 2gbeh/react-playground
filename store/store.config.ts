@@ -2,11 +2,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
 import { setupListeners } from "@reduxjs/toolkit/query";
 //
-import { baseApi } from "./services/base.api";
+import { baseApi } from "./base/base.api";
+import { productsReducer as products } from "./products/products.slice";
 
 export const store = configureStore({
   reducer: {
     [baseApi.reducerPath]: baseApi.reducer,
+    products,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(baseApi.middleware),
