@@ -1,7 +1,10 @@
 import { FormEvent, useState } from "react";
 import { mockApiCall } from "@/utils";
+import { useRouter } from "next/router";
+import { ROUTE } from "@/constants/ROUTE";
 
 export function useAddProductForm(onClose: () => void,productId: unknown) {
+      const router = useRouter()
   const [submitting, setSubmitting] = useState(false);
   //
   async function onSubmit(ev: FormEvent<HTMLFormElement>) {
@@ -11,22 +14,21 @@ export function useAddProductForm(onClose: () => void,productId: unknown) {
       method: "POST",
       body: formData,
     });
-
-    // Handle response if necessary
     const data = await response.json();
-    // ...
   }
   async function handleSubmit() {
     if (!submitting) {
       setSubmitting(true);
       // TODO(etugbeh): integrate api
-      const response = await fetch(`/api/products/${productId}`, {
+      const response = await fetch(`${ROUTE.products}/${productId}`, {
         method: "DELETE",
       });
       const data = await response.json();
-      console.log("🚀 ~ handleSubmit ~ data:", data);
+      // console.log("🚀 ~ handleSubmit ~ data:", data);
       setSubmitting(false);
+      // await fetch(ROUTE.products)
       onClose();
+      router.reload()
     }
   }
 
