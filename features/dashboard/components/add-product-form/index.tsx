@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useState } from "react";
+import React from "react";
 import {
   Dialog,
   DialogBackdrop,
@@ -7,25 +7,16 @@ import {
 } from "@headlessui/react";
 import { ExclamationTriangleIcon } from "@heroicons/react/24/outline";
 //
-import { mockApiCall } from "@/utils";
+import { useAddProductForm } from "./hook";
 
 interface IProps {
   open: boolean;
-  onClose: Dispatch<SetStateAction<boolean>>;
+  onClose: () => void;
 }
 
-const FormDialog: React.FC<IProps> = ({ open, onClose }) => {
-  const [submitting, setSubmitting] = useState(false);
-  async function handleSubmit() {
-    if (!submitting) {
-      setSubmitting(true);
-      // TODO(etugbeh): integrate api
-      await mockApiCall();
-      setSubmitting(false);
-      onClose(false);
-    }
-  }
-  console.log("🚀 ~ FormDialog");
+const AddProductForm: React.FC<IProps> = ({ open, onClose }) => {
+  const { submitting, handleSubmit } = useAddProductForm(onClose);
+  console.log("🚀 ~ AddProductForm");
   // renders
   return (
     <Dialog open={open} onClose={onClose} className="relative z-10">
@@ -68,7 +59,7 @@ const FormDialog: React.FC<IProps> = ({ open, onClose }) => {
             <div className="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
               <button
                 type="button"
-                onClick={() => onClose(false)}
+                onClick={onClose}
                 className="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto"
               >
                 Deactivate
@@ -76,7 +67,7 @@ const FormDialog: React.FC<IProps> = ({ open, onClose }) => {
               <button
                 type="button"
                 data-autofocus
-                onClick={() => onClose(false)}
+                onClick={onClose}
                 className="mt-3 inline-flex w-full justify-center rounded-md bg-white px-3 py-2 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50 sm:mt-0 sm:w-auto"
               >
                 Cancel
@@ -89,4 +80,4 @@ const FormDialog: React.FC<IProps> = ({ open, onClose }) => {
   );
 };
 
-export default React.memo(FormDialog);
+export default React.memo(AddProductForm);
