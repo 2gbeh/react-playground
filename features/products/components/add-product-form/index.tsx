@@ -15,7 +15,7 @@ interface IProps {
 }
 
 const AddProductForm: React.FC<IProps> = ({ open, onClose }) => {
-  const { submitting, handleSubmit, productsSelector } =
+  const { productsSelector, submitting, handleSubmit } =
     useAddProductForm(onClose);
   console.log("🚀 ~ AddProductForm");
   // renders

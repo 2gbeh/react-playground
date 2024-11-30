@@ -23,22 +23,18 @@ export function useAddProductForm(onClose: () => void) {
     if (!submitting) {
       setSubmitting(true);
       // mutation
-      const response = await fetch(
-        `${ROUTE.products}/${productsSelector.productId}`,
-        {
-          method: "DELETE",
-        }
-      );
-      const data = await response.json();
+      await fetch(`${ROUTE.products}/${productsSelector.productId}`, {
+        method: "DELETE",
+      });
       // query
       const response2 = await fetch(ROUTE.products);
       const data2 = await response2.json();
-      dispatch(productsActions.setProducts(data2));
+      dispatch(productsActions.setProducts(JSON.parse(data2.data)));
       //
       setSubmitting(false);
       onClose();
     }
   }
 
-  return { submitting, handleSubmit, productsSelector };
+  return { productsSelector, submitting, handleSubmit };
 }

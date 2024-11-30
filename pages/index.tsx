@@ -24,9 +24,14 @@ export const getServerSideProps = (async () => {
 }) satisfies GetServerSideProps<IProps>;
 
 const Dashboard: Page = ({ data }: IProps) => {
-  const { openFormDialog, toggleFormDialog, closeFormDialog, onDelete } =
-    useDashboard(data);
-  console.log("🚀 ~ Dashboard");
+  const {
+    productsSelector,
+    openFormDialog,
+    toggleFormDialog,
+    closeFormDialog,
+    onDelete,
+  } = useDashboard(data);
+  console.log("🚀 ~ Dashboard", productsSelector?.products);
   // renders
   return (
     <>
@@ -40,13 +45,15 @@ const Dashboard: Page = ({ data }: IProps) => {
             role="list"
             className="divide-y divide-gray-100 bg-white my-10 px-6 rounded-lg shadow"
           >
-            {data.map((item) => (
-              <ProductListCard
-                key={item.id}
-                product={item}
-                onDelete={onDelete}
-              />
-            ))}
+            {productsSelector?.products
+              ? productsSelector.products.map((item) => (
+                  <ProductListCard
+                    key={item.id}
+                    product={item}
+                    onDelete={onDelete}
+                  />
+                ))
+              : null}
           </ul>
         </div>
       </main>

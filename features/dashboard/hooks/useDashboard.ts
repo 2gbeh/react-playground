@@ -3,7 +3,7 @@ import { useAppDispatch, useAppSelector } from "@/store/store.config";
 import { ProductEntity, productsActions } from "@/store/products";
 
 export function useDashboard(data: ProductEntity[]) {
-  // const productsSelector = useAppSelector((state) => state.products);
+  const productsSelector = useAppSelector((state) => state.products);
   const dispatch = useAppDispatch();
   const [openFormDialog, setOpenFormDialog] = useState(false);
   //
@@ -22,6 +22,7 @@ export function useDashboard(data: ProductEntity[]) {
   }, []);
 
   return {
+    productsSelector,
     openFormDialog,
     toggleFormDialog,
     closeFormDialog,
