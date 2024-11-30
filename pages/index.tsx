@@ -13,15 +13,21 @@ import {
 } from "@/features/products";
 import { useDashboard, CTAButton } from "@/features/dashboard";
 
+type Page = NextPageWithLayout<
+  InferGetServerSidePropsType<typeof getServerSideProps>
+>;
+
+interface IProps {
+  data: ProductEntity[];
+}
+
 export const getServerSideProps = (async () => {
   const response = await ProductsService.getAll();
   const data = JSON.parse(response);
   return { props: { data } };
-}) satisfies GetServerSideProps<{ data: ProductEntity[] }>;
+}) satisfies GetServerSideProps<IProps>;
 
-const Dashboard: NextPageWithLayout<
-  InferGetServerSidePropsType<typeof getServerSideProps>
-> = ({ data }: { data: ProductEntity[] }) => {
+const Dashboard: Page = ({ data }: IProps) => {
   const { openFormDialog, toggleFormDialog } = useDashboard();
   console.log("🚀 ~ Dashboard");
   // renders
@@ -38,7 +44,7 @@ const Dashboard: NextPageWithLayout<
             role="list"
             className="divide-y divide-gray-100 bg-white my-10 px-6 rounded-lg shadow"
           >
-            {data?.map((item) => (
+            {data.map((item) => (
               <ProductListCard key={item.id} product={item} />
             ))}
           </ul>

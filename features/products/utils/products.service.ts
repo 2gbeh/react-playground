@@ -5,7 +5,7 @@ export class ProductsService {
   static async getAll() {
     const { rows } =
       await pg.sql`SELECT * FROM shopera_products ORDER BY id DESC`;
-    return JSON.stringify(rows);
+    return JSON.stringify(rows || []);
   }
   static async getById(id: number) {
     const { rows } =
