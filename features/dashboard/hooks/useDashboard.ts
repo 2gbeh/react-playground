@@ -5,7 +5,7 @@ import { ProductEntity, productsActions } from "@/store/products";
 export function useDashboard(data: ProductEntity[]) {
   const dispatch = useAppDispatch();
   const productsSelector = useAppSelector((state) => state.products);
-  const [openFormDialog, setOpenFormDialog] = useState(true);
+  const [openFormDialog, setOpenFormDialog] = useState(false);
   //
   const toggleFormDialog = () => setOpenFormDialog((prev) => !prev);
   const closeFormDialog = () => {

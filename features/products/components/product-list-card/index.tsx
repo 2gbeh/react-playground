@@ -17,7 +17,7 @@ const ProductListCard: React.FC<IProps> = ({
   // renders
   return (
     <li
-      className="flex justify-between gap-x-6 py-5"
+      className="flex items-center justify-between gap-x-6 py-5"
       onClick={() => onDelete(product.id)}
     >
       <div className="flex items-center min-w-0 gap-x-4">
