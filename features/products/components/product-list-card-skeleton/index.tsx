@@ -6,7 +6,7 @@ interface IProps {
   len?: number;
 }
 
-const ProductListCardSkeleton: React.FC<IProps> = ({ len = 1 }) => {
+const ProductListCardSkeleton: React.FC<IProps> = ({ len = 10 }) => {
   console.log("🚀 ~ ProductListCardSkeleton");
   // renders
   return [...Array(len)].map((_, i) => (

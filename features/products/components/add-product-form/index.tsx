@@ -15,7 +15,7 @@ interface IProps {
 }
 
 const AddProductForm: React.FC<IProps> = ({ open, onClose }) => {
-  const { productsSelector, submitting, handleSubmit } =
+  const { productsSelector, deleting, handleDelete } =
     useAddProductForm(onClose);
   console.log("🚀 ~ AddProductForm");
   // renders
@@ -60,10 +60,10 @@ const AddProductForm: React.FC<IProps> = ({ open, onClose }) => {
             <div className="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
               <button
                 type="button"
-                onClick={handleSubmit}
+                onClick={handleDelete}
                 className="w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto flex items-center "
               >
-                Deactivate{submitting && "..."}
+                Deactivate{deleting && "..."}
               </button>
               <button
                 type="button"

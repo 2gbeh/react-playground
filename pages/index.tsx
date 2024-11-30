@@ -35,13 +35,15 @@ const Dashboard: Page = ({ data }: IProps) => {
     toggleFormDialog,
     closeFormDialog,
     onDelete,
+    handleReset,
+    resetting,
   } = useDashboard(data);
   console.log("🚀 ~ Dashboard");
   // renders
   return (
     <>
-      <Ribbon title="Dashboard" badge={data.length}>
-        <CTAButton onClick={toggleFormDialog} />
+      <Ribbon title="Dashboard" badge={productsSelector.totalProducts}>
+        <CTAButton onClick={handleReset} />
       </Ribbon>
       <main>
         {/* <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8"> */}
@@ -50,18 +52,18 @@ const Dashboard: Page = ({ data }: IProps) => {
             role="list"
             className="divide-y divide-gray-100 bg-white my-10 px-6 rounded-lg shadow"
           >
-            {productsSelector?.products ? (
-              productsSelector.products.length > 0 ? (
-                productsSelector.products.map((item) => (
-                  <ProductListCard
-                    key={item.id}
-                    product={item}
-                    onDelete={onDelete}
-                  />
-                ))
-              ) : <ProductListCardSkeleton len={10} />
+            {resetting || !productsSelector?.products ? (
+              <ProductListCardSkeleton />
+            ) : productsSelector.totalProducts > 0 ? (
+              productsSelector.products.map((item) => (
+                <ProductListCard
+                  key={item.id}
+                  product={item}
+                  onDelete={onDelete}
+                />
+              ))
             ) : (
-              <ProductListCardSkeleton len={10} />
+              <ProductListCardSkeleton />
             )}
           </ul>
         </div>

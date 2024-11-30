@@ -8,7 +8,7 @@ import { ROUTE } from "@/constants/ROUTE";
 export function useAddProductForm(onClose: () => void) {
   const dispatch = useAppDispatch();
   const productsSelector = useAppSelector((state) => state.products);
-  const [submitting, setSubmitting] = useState(false);
+  const [deleting, setDeleting] = useState(false);
   //
   async function onSubmit(ev: FormEvent<HTMLFormElement>) {
     ev.preventDefault();
@@ -19,22 +19,26 @@ export function useAddProductForm(onClose: () => void) {
     });
     const data = await response.json();
   }
-  async function handleSubmit() {
-    if (!submitting) {
-      setSubmitting(true);
+  async function handleDelete() {
+    if (!deleting) {
+      setDeleting(true);
       // mutation
       await fetch(`${ROUTE.products}/${productsSelector.productId}`, {
-        method: "DELETE",
+        method: "PATCH",
+        body: JSON.stringify({ _action: "trash" }),
+        headers: {
+          "Content-Type": "application/json",
+        },
       });
       // query
       const response2 = await fetch(ROUTE.products);
       const data2 = await response2.json();
       dispatch(productsActions.setProducts(JSON.parse(data2.data)));
       //
-      setSubmitting(false);
+      setDeleting(false);
       onClose();
     }
   }
 
-  return { productsSelector, submitting, handleSubmit };
+  return { productsSelector, deleting, handleDelete };
 }

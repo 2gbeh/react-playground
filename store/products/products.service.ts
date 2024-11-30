@@ -21,10 +21,12 @@ export class ProductsService {
   static async create() {}
   static async update() {}
   static async delete() {}
-  static async trash(id: number) {
+  static async trash(id?: number) {
     let deleted_at = new Date().toJSON();
     const { rows } =
-      await pg.sql`UPDATE shopera_products SET deleted_at=${deleted_at} WHERE id=${id}`;
+      id && id > 0
+        ? await pg.sql`UPDATE shopera_products SET deleted_at=${deleted_at} WHERE id=${id}`
+        : await pg.sql`UPDATE shopera_products SET deleted_at=${deleted_at}`;
     return JSON.stringify(rows || []);
   }
   static async restore(id?: number) {

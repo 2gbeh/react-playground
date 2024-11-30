@@ -6,9 +6,18 @@ export default async function productHandler(
   res: NextApiResponse
 ) {
   const { id } = req.query;
+  const { _action } = req.body;
+  console.log("🚀 ~ _action, id:", _action, id);
+  let response: string;
+  //
   switch (req.method) {
-    case "DELETE":
-      const response = await ProductsService.trash(Number(id));
+    case "PATCH":
+      response =
+        _action === "restore"
+          ? await ProductsService.restore(Number(id))
+          : _action === "trash"
+          ? await ProductsService.trash(Number(id))
+          : "";
       res.status(200).json({ data: response });
       break;
     default:
