@@ -5,14 +5,21 @@ import { ProductEntity, ProductsPipe } from "@/features/products";
 
 interface IProps {
   product: ProductEntity;
+  onDelete?: (id: number) => void;
 }
 
-const ProductListCard: React.FC<IProps> = ({ product }) => {
+const ProductListCard: React.FC<IProps> = ({
+  product,
+  onDelete = () => undefined,
+}) => {
   const item = ProductsPipe.transform(product);
   console.log("🚀 ~ ProductListCard");
   // renders
   return (
-    <li className="flex justify-between gap-x-6 py-5">
+    <li
+      className="flex justify-between gap-x-6 py-5"
+      onClick={() => onDelete(product.id)}
+    >
       <div className="flex items-center min-w-0 gap-x-4">
         <img
           src={item.thumbnail}

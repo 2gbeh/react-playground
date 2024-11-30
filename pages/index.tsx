@@ -28,13 +28,18 @@ export const getServerSideProps = (async () => {
 }) satisfies GetServerSideProps<IProps>;
 
 const Dashboard: Page = ({ data }: IProps) => {
-  const { openFormDialog, toggleFormDialog } = useDashboard();
+  const {
+    openFormDialog,
+    toggleFormDialog,
+    closeFormDialog,
+    onDelete,
+    selectedId,
+  } = useDashboard();
   console.log("🚀 ~ Dashboard");
   // renders
   return (
     <>
-      <AddProductForm open={openFormDialog} onClose={toggleFormDialog} />
-      <Ribbon title="Dashboard">
+      <Ribbon title="Dashboard" badge={data.length}>
         <CTAButton onClick={toggleFormDialog} />
       </Ribbon>
       <main>
@@ -45,11 +50,22 @@ const Dashboard: Page = ({ data }: IProps) => {
             className="divide-y divide-gray-100 bg-white my-10 px-6 rounded-lg shadow"
           >
             {data.map((item) => (
-              <ProductListCard key={item.id} product={item} />
+              <ProductListCard
+                key={item.id}
+                product={item}
+                onDelete={onDelete}
+              />
             ))}
           </ul>
         </div>
       </main>
+
+      {/* MODALS */}
+      <AddProductForm
+        open={openFormDialog}
+        onClose={closeFormDialog}
+        selected={selectedId}
+      />
     </>
   );
 };
