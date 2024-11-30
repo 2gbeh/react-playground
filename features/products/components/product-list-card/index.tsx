@@ -1,7 +1,7 @@
 import React from "react";
 import { QrCodeIcon } from "@heroicons/react/24/outline";
 //
-import { ProductEntity, ProductsPipe } from "@/features/products";
+import { ProductEntity, ProductsPipe } from "@/store/products";
 
 interface IProps {
   product: ProductEntity;

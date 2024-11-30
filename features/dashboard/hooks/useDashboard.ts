@@ -1,24 +1,30 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useAppDispatch, useAppSelector } from "@/store/store.config";
+import { ProductEntity, productsActions } from "@/store/products";
 
-export function useDashboard() {
-  const [selectedId, setSelectedId] = useState(-1);
+export function useDashboard(data: ProductEntity[]) {
+  // const productsSelector = useAppSelector((state) => state.products);
+  const dispatch = useAppDispatch();
   const [openFormDialog, setOpenFormDialog] = useState(false);
   //
   const toggleFormDialog = () => setOpenFormDialog((prev) => !prev);
   const closeFormDialog = () => {
-    setSelectedId(-1);
+    dispatch(productsActions.setProductId(-1));
     setOpenFormDialog(false);
   };
   const onDelete = (id: number) => {
-    setSelectedId(id);
+    dispatch(productsActions.setProductId(id));
     setOpenFormDialog(true);
   };
+
+  useEffect(() => {
+    dispatch(productsActions.setProducts(data));
+  }, []);
 
   return {
     openFormDialog,
     toggleFormDialog,
     closeFormDialog,
     onDelete,
-    selectedId,
   };
 }

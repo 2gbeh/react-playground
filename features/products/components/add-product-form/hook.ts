@@ -1,10 +1,13 @@
 import { FormEvent, useState } from "react";
+//
 import { mockApiCall } from "@/utils";
-import { useRouter } from "next/router";
+import { useAppDispatch, useAppSelector } from "@/store/store.config";
+import { productsActions } from "@/store/products/products.slice";
 import { ROUTE } from "@/constants/ROUTE";
 
-export function useAddProductForm(onClose: () => void,productId: unknown) {
-      const router = useRouter()
+export function useAddProductForm(onClose: () => void) {
+  const productsSelector = useAppSelector((state) => state.products);
+  const dispatch = useAppDispatch();
   const [submitting, setSubmitting] = useState(false);
   //
   async function onSubmit(ev: FormEvent<HTMLFormElement>) {
@@ -19,18 +22,23 @@ export function useAddProductForm(onClose: () => void,productId: unknown) {
   async function handleSubmit() {
     if (!submitting) {
       setSubmitting(true);
-      // TODO(etugbeh): integrate api
-      const response = await fetch(`${ROUTE.products}/${productId}`, {
-        method: "DELETE",
-      });
+      // mutation
+      const response = await fetch(
+        `${ROUTE.products}/${productsSelector.productId}`,
+        {
+          method: "DELETE",
+        }
+      );
       const data = await response.json();
-      // console.log("🚀 ~ handleSubmit ~ data:", data);
+      // query
+      const response2 = await fetch(ROUTE.products);
+      const data2 = await response2.json();
+      dispatch(productsActions.setProducts(data2));
+      //
       setSubmitting(false);
-      // await fetch(ROUTE.products)
       onClose();
-      router.reload()
     }
   }
 
-  return { submitting, handleSubmit };
+  return { submitting, handleSubmit, productsSelector };
 }

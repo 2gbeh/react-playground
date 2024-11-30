@@ -1,6 +1,6 @@
 import { formatBarcode } from "@/utils";
 import { DateHelper } from "@/utils/helpers/date.helper";
-import { ProductEntity } from "../utils/products.interface";
+import { ProductEntity } from "@/store/products/products.interface";
 
 export class ProductsPipe {
   static transform = (product: ProductEntity) => {

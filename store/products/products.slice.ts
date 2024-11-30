@@ -10,13 +10,13 @@ interface IProductsSlice {
   totalProducts: number;
 }
 
-const initialState: IProductsSlice = {
+const initialState = {
   product: null,
   productId: -1,
   products: null,
   filteredProducts: [],
   totalProducts: 0,
-};
+} satisfies IProductsSlice as IProductsSlice;
 
 const productsSlice = createSlice({
   name: "products",
@@ -42,5 +42,5 @@ const productsSlice = createSlice({
   extraReducers: (builder) => {},
 });
 
-export const { reducer: productsReducer, actions: productsActions } =
-  productsSlice;
+export const productsActions = productsSlice.actions;
+export default productsSlice.reducer;

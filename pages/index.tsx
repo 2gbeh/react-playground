@@ -4,13 +4,9 @@ import type { InferGetServerSidePropsType, GetServerSideProps } from "next";
 import type { NextPageWithLayout } from "./_app";
 import DashboardLayout from "@/components/layouts/dashboard-layout";
 import Ribbon from "@/components/atoms/ribbon";
+import { AddProductForm, ProductListCard } from "@/features/products";
+import { ProductEntity, ProductsService } from "@/store/products";
 //
-import {
-  ProductEntity,
-  ProductsService,
-  AddProductForm,
-  ProductListCard,
-} from "@/features/products";
 import { useDashboard, CTAButton } from "@/features/dashboard";
 
 type Page = NextPageWithLayout<
@@ -28,13 +24,8 @@ export const getServerSideProps = (async () => {
 }) satisfies GetServerSideProps<IProps>;
 
 const Dashboard: Page = ({ data }: IProps) => {
-  const {
-    openFormDialog,
-    toggleFormDialog,
-    closeFormDialog,
-    onDelete,
-    selectedId,
-  } = useDashboard();
+  const { openFormDialog, toggleFormDialog, closeFormDialog, onDelete } =
+    useDashboard(data);
   console.log("🚀 ~ Dashboard");
   // renders
   return (
@@ -61,11 +52,7 @@ const Dashboard: Page = ({ data }: IProps) => {
       </main>
 
       {/* MODALS */}
-      <AddProductForm
-        open={openFormDialog}
-        onClose={closeFormDialog}
-        selected={selectedId}
-      />
+      <AddProductForm open={openFormDialog} onClose={closeFormDialog} />
     </>
   );
 };

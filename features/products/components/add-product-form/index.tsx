@@ -12,11 +12,11 @@ import { useAddProductForm } from "./hook";
 interface IProps {
   open: boolean;
   onClose: () => void;
-  selected?: unknown;
 }
 
-const AddProductForm: React.FC<IProps> = ({ open, onClose, selected }) => {
-  const { submitting, handleSubmit } = useAddProductForm(onClose, selected);
+const AddProductForm: React.FC<IProps> = ({ open, onClose }) => {
+  const { submitting, handleSubmit, productsSelector } =
+    useAddProductForm(onClose);
   console.log("🚀 ~ AddProductForm");
   // renders
   return (
@@ -45,7 +45,7 @@ const AddProductForm: React.FC<IProps> = ({ open, onClose, selected }) => {
                     as="h3"
                     className="text-base font-semibold text-gray-900"
                   >
-                    Deactivate account ID: {selected as string}
+                    Deactivate account ID: {productsSelector.productId}
                   </DialogTitle>
                   <div className="mt-2">
                     <p className="text-sm text-gray-500">
