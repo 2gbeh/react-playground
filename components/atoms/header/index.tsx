@@ -1,11 +1,13 @@
 import React from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 //
 import Logo from "../logo";
 
 interface IProps {}
 
 const Header: React.FC<IProps> = ({}) => {
+  const router = useRouter();
   console.log("🚀 ~ Header");
   // renders
   return (
@@ -20,7 +22,11 @@ const Header: React.FC<IProps> = ({}) => {
               { label: "CAR GALLERY", path: "/gallery" },
               { label: "CONTACT US", path: "/contact-us" },
             ].map(({ label, path }, i) => (
-              <Link key={i} href={path} className={i < 1 ? "text-brand" : ""}>
+              <Link
+                key={i}
+                href={path}
+                className={router.asPath === path ? "text-brand" : ""}
+              >
                 {label}
               </Link>
             ))}

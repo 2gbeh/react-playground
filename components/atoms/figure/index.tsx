@@ -22,6 +22,8 @@ const Figure: React.FC<IProps> = ({ src, size, priority = false, rounded }) => {
       height={height}
       priority={priority}
       style={{
+        width: "auto",
+        height: "auto",
         borderRadius: rounded ? "100%" : 0,
       }}
     />
