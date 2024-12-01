@@ -7,6 +7,8 @@ import Banner from "@/components/atoms/banner";
 import Hero from "@/components/molecules/hero";
 import SectionA from "@/components/molecules/section-a";
 import SectionB from "@/components/molecules/section-b";
+import SectionC from "@/components/molecules/section-c";
+import SectionD from "@/components/molecules/section-d";
 
 const Home = () => {
   console.log("🚀 ~ Home");
@@ -20,6 +22,8 @@ const Home = () => {
       <Hero />
       <SectionA />
       <SectionB />
+      <SectionC />
+      <SectionD />
     </>
   );
 };

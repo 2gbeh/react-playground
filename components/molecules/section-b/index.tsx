@@ -3,8 +3,8 @@ import { backgroundImageStyles } from "@/utils/backgroundImageStyles";
 
 interface IProps {}
 
-const SectionII: React.FC<IProps> = ({}) => {
-  console.log("🚀 ~ SectionII");
+const SectionB: React.FC<IProps> = ({}) => {
+  console.log("🚀 ~ SectionB");
   // renders
   return (
     <section
@@ -25,4 +25,4 @@ const SectionII: React.FC<IProps> = ({}) => {
   );
 };
 
-export default React.memo(SectionII);
+export default React.memo(SectionB);

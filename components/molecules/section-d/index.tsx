@@ -2,8 +2,8 @@ import React from "react";
 
 interface IProps {}
 
-const SectionIV: React.FC<IProps> = ({}) => {
-  console.log("🚀 ~ SectionIV");
+const SectionD: React.FC<IProps> = ({}) => {
+  console.log("🚀 ~ SectionD");
   // renders
   return (
     <section className="section-iv">
@@ -16,4 +16,4 @@ const SectionIV: React.FC<IProps> = ({}) => {
   );
 };
 
-export default React.memo(SectionIV);
+export default React.memo(SectionD);

@@ -54,7 +54,7 @@ body {
 }
 
 .p {
-  @apply text-3xl font-black
+  @apply text-sm tracking-wide leading-[24px]
 }
 
 .button {
