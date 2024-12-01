@@ -1,7 +1,15 @@
-export const backgroundImageStyles = (src: string) => ({
-  backgroundImage: `linear-gradient(0deg, #000000e6, #11111100), url(${src})`,
+type BackgroundAttachment = "scroll" | "fixed";
+
+type BackgroundSize = "cover" | "contain";
+
+export const backgroundImageStyles = (
+  src: string,
+  backgroundAttachment: BackgroundAttachment = "scroll",
+  backgroundSize: BackgroundSize = "cover",
+) => ({
+  backgroundImage: `linear-gradient(0deg, #000000f2, #11111100), url(${src})`,
   backgroundRepeat: "no-repeat",
-  backgroundAttachment: "fixed",
   backgroundPosition: "center",
-  backgroundSize: "cover",
+  backgroundAttachment,
+  backgroundSize,
 });

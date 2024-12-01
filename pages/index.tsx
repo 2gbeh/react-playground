@@ -22,8 +22,11 @@ const Home = () => {
       <Hero />
       <SectionA />
       <SectionB />
+      <SectionA />
       <SectionC />
+      <SectionA />
       <SectionD />
+      <SectionA />
     </>
   );
 };

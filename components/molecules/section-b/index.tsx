@@ -9,7 +9,7 @@ const SectionB: React.FC<IProps> = ({}) => {
   return (
     <section
       className="flex min-h-[480px] items-center bg-accent py-4 text-white"
-      style={backgroundImageStyles('/uploads/cover-3.png')}
+      style={backgroundImageStyles("/uploads/cover-3.png", "fixed")}
     >
       <div className="container space-y-10 text-center">
         <hgroup className="space-y-4">
