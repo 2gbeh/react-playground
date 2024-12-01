@@ -7,9 +7,10 @@ interface IProps {
   src: string;
   size: TSize | [TSize, TSize];
   priority?: boolean;
+  rounded?: boolean;
 }
 
-const Figure: React.FC<IProps> = ({ src, size, priority = false }) => {
+const Figure: React.FC<IProps> = ({ src, size, priority = false, rounded }) => {
   const [width, height] = Array.isArray(size) ? size : [size, size];
   console.log("🚀 ~ Figure");
   // renders
@@ -20,11 +21,9 @@ const Figure: React.FC<IProps> = ({ src, size, priority = false }) => {
       width={width}
       height={height}
       priority={priority}
-      // className="dark:invert"
-      // style={{
-      //   width,
-      //   height,
-      // }}
+      style={{
+        borderRadius: rounded ? "100%" : 0,
+      }}
     />
   );
 };

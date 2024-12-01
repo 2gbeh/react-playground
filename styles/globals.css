@@ -62,9 +62,9 @@ body {
 }
 
 .button {
-  @apply bg-brand text-white px-8 py-4 uppercase font-semibold text-sm tracking-wide transition-colors hover:bg-slate-950 hover:text-white
+  @apply bg-brand text-white px-8 py-4 uppercase font-semibold text-sm tracking-wide transition-colors hover:bg-black hover:text-white
 }
 
 .button-alt {
-  @apply bg-white text-brand px-8 py-4 uppercase font-semibold text-sm tracking-wide transition-colors hover:bg-slate-950 hover:text-white
+  @apply bg-white text-brand px-8 py-4 uppercase font-semibold text-sm tracking-wide transition-colors hover:bg-black hover:text-white
 }

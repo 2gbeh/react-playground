@@ -20,7 +20,7 @@ const Hero: React.FC<IProps> = ({}) => {
           <p className="text-lg">
             Rent a Car Online Today & Enjoy the Best Deals, Rates & Accessories.
           </p>
-          <div className="space-x-5">
+          <div className="space-x-6">
             <button className="button">VISIT CAR GALLERY</button>
             <button className="button-alt">CONTACT US</button>
           </div>

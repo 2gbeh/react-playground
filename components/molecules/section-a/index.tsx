@@ -7,7 +7,7 @@ const SectionA: React.FC<IProps> = ({}) => {
   console.log("🚀 ~ SectionA");
   // renders
   return (
-    <section className="flex h-screen items-center bg-white py-4">
+    <section className="flex-col-center h-screen bg-white py-4">
       <div className="container space-y-10">
         <h1 className="h2 text-center">Rental Vehicles</h1>
         <ul className="flex-centered gap-10">

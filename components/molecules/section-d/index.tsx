@@ -8,7 +8,7 @@ const SectionD: React.FC<IProps> = ({}) => {
   // renders
   return (
     <section
-      className="flex min-h-[320px] items-center bg-accent py-4 text-white"
+      className="flex-col-center min-h-[320px] bg-accent py-4 text-white"
       style={backgroundImageStyles("/uploads/cover-6.png")}
     >
       <div className="container space-y-10">

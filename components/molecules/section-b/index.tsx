@@ -8,15 +8,15 @@ const SectionB: React.FC<IProps> = ({}) => {
   // renders
   return (
     <section
-      className="flex h-screen items-center bg-accent py-4 text-white"
+      className="flex-col-center h-screen bg-accent text-white"
       style={backgroundImageStyles("/uploads/cover-3.png")}
     >
       <div className="container space-y-10 text-center">
         <hgroup className="space-y-4">
           <h1 className="h2">10% Off on Any Rental!</h1>
-          <p className="">First Time Renters Only!</p>
+          <p className="h4">First Time Renters Only!</p>
         </hgroup>
-        <div className="space-x-5">
+        <div className="space-x-6">
           <button className="button-alt">BOOK ONLINE</button>
           <button className="button">VIEW ALL DEALS</button>
         </div>
