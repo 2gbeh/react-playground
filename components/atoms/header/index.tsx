@@ -13,14 +13,14 @@ const Header: React.FC<IProps> = ({}) => {
       <div className="flex-center-between container">
         <Logo />
         <nav className="">
-          <ul className="space-x-5 text-xs font-semibold">
+          <ul className="space-x-5 text-sm font-semibold">
             {[
               { label: "HOME", path: "/" },
               { label: "ABOUT US", path: "/" },
               { label: "CAR GALLERY", path: "/" },
               { label: "CONTACT US", path: "/" },
             ].map(({ label, path }, i) => (
-              <Link key={i} href={path} className="">
+              <Link key={i} href={path} className={i < 1 ? "text-brand" : ""}>
                 {label}
               </Link>
             ))}

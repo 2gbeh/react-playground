@@ -7,6 +7,7 @@
   --foreground: #171717;
   --brand: #f16820;
   --accent: #060709;
+  --bg-img-url: "https://limousine-dubai.ae/wp-content/uploads/2024/11/Featuring-Photo-4-1024x574.jpeg"
 }
 
 @media (prefers-color-scheme: dark) {
@@ -15,12 +16,13 @@
     --foreground: #ededed;
     --brand: #f16820;
     --accent: #060709;
+    --bg-img-url: "https://limousine-dubai.ae/wp-content/uploads/2024/11/Featuring-Photo-4-1024x574.jpeg"
   }
 }
 
 body {
   background: #fafafa;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .container {
@@ -29,4 +31,12 @@ body {
 
 .flex-center-between {
   @apply flex items-center justify-between
+}
+
+.button-alt {
+  @apply bg-white text-brand px-8 py-4 uppercase font-semibold text-sm tracking-wide  transition-colors hover:bg-slate-950 hover:text-white
+}
+
+.button {
+  @apply bg-brand text-white px-8 py-4 uppercase font-semibold text-sm tracking-wide transition-colors hover:bg-slate-950 hover:text-white
 }

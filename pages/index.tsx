@@ -3,6 +3,8 @@ import Head from "next/head";
 //
 import HomeLayout from "@/components/layouts/home-layout";
 import Banner from "@/components/atoms/banner";
+import Hero from "@/components/molecules/hero";
+import { APP } from "@/constants/APP";
 
 const Home = () => {
   console.log("🚀 ~ Home");
@@ -11,14 +13,18 @@ const Home = () => {
   //   <a href={APP.mailto} target="_top">Contact Us</a>
   //   <a href={APP.tel} target="_top">Call Us</a>
   // </div>
-  return <h1>Home</h1>;
+  return (
+    <>
+      <Hero />
+    </>
+  );
 };
 
 Home.getLayout = function getLayout(page: ReactElement) {
   return (
     <>
       <Head>
-        <title>Welcome</title>
+        <title>{APP.name}</title>
       </Head>
       <Banner />
       <HomeLayout>{page}</HomeLayout>
