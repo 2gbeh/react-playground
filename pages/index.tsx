@@ -1,82 +1,29 @@
-import React from "react";
-import type { ReactElement } from "react";
-import type { InferGetServerSidePropsType, GetServerSideProps } from "next";
+import React, { ReactElement } from "react";
+import Head from "next/head";
 //
-import type { NextPageWithLayout } from "./_app";
-import DashboardLayout from "@/components/layouts/dashboard-layout";
-import Ribbon from "@/components/atoms/ribbon";
-import {
-  AddProductForm,
-  ProductListCard,
-  ProductListCardSkeleton,
-} from "@/features/products";
-import { ProductEntity, ProductsService } from "@/store/products";
-//
-import { useDashboard, CTAButton } from "@/features/dashboard";
+import HomeLayout from "@/components/layouts/home-layout";
+import { APP } from "@/constants/APP";
 
-type Page = NextPageWithLayout<
-  InferGetServerSidePropsType<typeof getServerSideProps>
->;
-
-interface IProps {
-  data: ProductEntity[];
-}
-
-export const getServerSideProps = (async () => {
-  const response = await ProductsService.getAll();
-  const data = JSON.parse(response);
-  return { props: { data } };
-}) satisfies GetServerSideProps<IProps>;
-
-const Dashboard: Page = ({ data }: IProps) => {
-  const {
-    productsSelector,
-    openFormDialog,
-    toggleFormDialog,
-    closeFormDialog,
-    onDelete,
-    handleReset,
-    resetting,
-  } = useDashboard(data);
-  console.log("🚀 ~ Dashboard");
+const Home = () => {
+  console.log("🚀 ~ Home");
   // renders
   return (
     <>
-      <Ribbon title="Dashboard" badge={productsSelector.totalProducts}>
-        <CTAButton onClick={handleReset} />
-      </Ribbon>
-      <main>
-        {/* <div className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8"> */}
-        <div className="overflow-auto max-h-screen px-4 sm:px-6 lg:px-8 pb-10">
-          <ul
-            role="list"
-            className="divide-y divide-gray-100 bg-white my-10 px-6 rounded-lg shadow"
-          >
-            {resetting || !productsSelector?.products ? (
-              <ProductListCardSkeleton />
-            ) : productsSelector.totalProducts > 0 ? (
-              productsSelector.products.map((item) => (
-                <ProductListCard
-                  key={item.id}
-                  product={item}
-                  onDelete={onDelete}
-                />
-              ))
-            ) : (
-              <ProductListCardSkeleton />
-            )}
-          </ul>
-        </div>
-      </main>
-
-      {/* MODALS */}
-      <AddProductForm open={openFormDialog} onClose={closeFormDialog} />
+      <a href={`"${APP.mailto}"`}>Contact Us</a>
+      <a href={`"${APP.tel}"`}>Call Us</a>
     </>
   );
 };
 
-Dashboard.getLayout = function getLayout(page: ReactElement) {
-  return <DashboardLayout>{page}</DashboardLayout>;
+Home.getLayout = function getLayout(page: ReactElement) {
+  return (
+    <>
+      <Head>
+        <title>Welcome</title>
+      </Head>
+      <HomeLayout>{page}</HomeLayout>
+    </>
+  );
 };
 
-export default Dashboard;
+export default Home;

@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import { Disclosure, DisclosureButton } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 //
@@ -20,7 +21,9 @@ const Header: React.FC<IProps> = ({}) => {
           <div className="flex items-center">
             <div className="shrink-0">
               {/* LOGO */}
-              <Logo />
+              <Link href="/">
+                <Logo />
+              </Link>
             </div>
             {/* NAVBAR */}
             <Navbar />

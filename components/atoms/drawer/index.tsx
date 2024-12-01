@@ -1,8 +1,8 @@
 import React from "react";
-// 
+//
 import { DisclosureButton, DisclosurePanel } from "@headlessui/react";
 import { BellIcon } from "@heroicons/react/24/outline";
-import { classNames } from "@/utils";
+import { cn } from "@/utils";
 import { APP } from "@/constants/APP";
 
 interface IProps {}
@@ -19,7 +19,7 @@ const Drawer: React.FC<IProps> = ({}) => {
             as="a"
             href={item.href}
             aria-current={item.current ? "page" : undefined}
-            className={classNames(
+            className={cn(
               item.current
                 ? "bg-gray-900 text-white"
                 : "text-gray-300 hover:bg-gray-700 hover:text-white",

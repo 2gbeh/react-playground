@@ -24,18 +24,33 @@ const Skeleton: React.FC<IProps> = ({
   console.log("🚀 ~ Skeleton");
   // renders
   return (
-    <div
-      style={{
-        backgroundColor: "#eee",
-        width: w,
-        height: h,
-        borderRadius: br,
-        marginTop: mt,
-        marginBottom: mb,
-        marginLeft: ml,
-        marginRight: mr,
-      }}
-    ></div>
+    <>
+      <div
+        className="skeleton"
+        style={{
+          width: w,
+          height: h,
+          borderRadius: br,
+          marginTop: mt,
+          marginBottom: mb,
+          marginLeft: ml,
+          marginRight: mr,
+        }}
+      ></div>
+      <style jsx>{`
+        .skeleton {
+          animation: buffer 0.6s linear infinite alternate;
+        }
+        @keyframes buffer {
+          0% {
+            background-color: #ccc;
+          }
+          100% {
+            background-color: #eee;
+          }
+        }
+      `}</style>
+    </>
   );
 };
 
