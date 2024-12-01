@@ -29,6 +29,10 @@ body {
   @apply w-full sm:w-[80%] mx-auto
 }
 
+.flex-centered {
+  @apply flex items-center justify-center
+}
+
 .flex-center-between {
   @apply flex items-center justify-between
 }

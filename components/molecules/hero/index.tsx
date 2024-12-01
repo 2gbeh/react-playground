@@ -7,10 +7,10 @@ const Hero: React.FC<IProps> = ({}) => {
   // renders
   return (
     <section
-      className="flex min-h-[580px] flex-col justify-center bg-accent"
+      className="flex min-h-[480px] flex-col justify-center bg-accent"
       style={{
         backgroundImage:
-          "linear-gradient(0deg, #00000080, #11111100), url(./images/cover.png)",
+          "linear-gradient(0deg, #000000f2, #11111180), url(/uploads/hero.png)",
         backgroundRepeat: "no-repeat",
         backgroundAttachment: "fixed",
         backgroundPosition: "center",

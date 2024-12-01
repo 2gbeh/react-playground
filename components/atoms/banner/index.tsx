@@ -1,4 +1,5 @@
 import React from "react";
+import { APP } from "@/constants/APP";
 
 interface IProps {}
 
@@ -9,7 +10,11 @@ const Banner: React.FC<IProps> = ({}) => {
     <section className="bg-accent py-4">
       <div className="container flex justify-end gap-x-2 font-bold">
         <p className="text-white">BOOK ONLINE NOW. CALL</p>
-        <p className="text-brand">(123) 456-7 8910</p>
+        <p className="text-brand">
+          <a href={APP.tel} target="_top">
+            {APP.phone}
+          </a>
+        </p>
       </div>
     </section>
   );
