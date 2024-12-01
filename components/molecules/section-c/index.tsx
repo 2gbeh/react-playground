@@ -8,11 +8,11 @@ const SectionC: React.FC<IProps> = ({}) => {
   // renders
   return (
     <section
-      className="flex min-h-[640px] items-center bg-accent py-4 text-white"
+      className="flex h-screen items-center bg-accent py-4 text-white"
       style={backgroundImageStyles("/uploads/cover-5.png")}
     >
       <div className="container">
-        <div className="max-w-[640px] space-y-10 bg-[#000000cc] py-10 px-14">
+        <div className="max-w-[640px] space-y-10 bg-[#000000cc] px-14 py-10">
           <hgroup className="">
             <h1 className="h3">Why rent your car with</h1>
             <h1 className="h3">Auto Leasing in Florida?</h1>

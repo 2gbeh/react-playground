@@ -3,11 +3,13 @@ import Head from "next/head";
 //
 import { APP } from "@/constants/APP";
 import HomeLayout from "@/components/layouts/home-layout";
+import Tent from "@/components/atoms/tent";
 import Banner from "@/components/atoms/banner";
 import Hero from "@/components/molecules/hero";
 import SectionA from "@/components/molecules/section-a";
 import SectionB from "@/components/molecules/section-b";
 import SectionC from "@/components/molecules/section-c";
+import Testimonials from "@/components/molecules/testimonials";
 import SectionD from "@/components/molecules/section-d";
 
 const Home = () => {
@@ -18,16 +20,16 @@ const Home = () => {
   //
   // </div>
   return (
-    <>
+    <main>
       <Hero />
       <SectionA />
       <SectionB />
-      <SectionA />
+      <Tent as="partial">Gallery</Tent>
       <SectionC />
-      <SectionA />
+      <Testimonials />
       <SectionD />
-      <SectionA />
-    </>
+      <Tent as="partial">Footer</Tent>
+    </main>
   );
 };
 

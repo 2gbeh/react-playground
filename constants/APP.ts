@@ -4,6 +4,7 @@ export const APP = {
   url: "https://peterrenzlimoservices.com",
   domain: "peterrenzlimoservices.com",
   name: "Peter Renz Limo Services Corp",
+  name_short: "Peter Renz Limo Services",
   address: "2930 NW 55th ave apt 1B Lauderhill FL 33313",
   address_line1: "2930 NW 55th ave apt 1B",
   address_line2: "Lauderhill FL 33313",

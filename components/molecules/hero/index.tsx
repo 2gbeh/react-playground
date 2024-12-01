@@ -8,7 +8,7 @@ const Hero: React.FC<IProps> = ({}) => {
   // renders
   return (
     <section
-      className="flex min-h-[640px] flex-col justify-center bg-accent text-white"
+      className="flex-col-center h-screen bg-accent text-white"
       style={backgroundImageStyles("/uploads/cover-2.png", "fixed")}
     >
       <div className="container">

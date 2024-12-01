@@ -33,6 +33,10 @@ body {
   @apply flex items-center justify-center
 }
 
+.flex-col-center {
+  @apply flex flex-col justify-center
+}
+
 .flex-center-between {
   @apply flex items-center justify-between
 }
