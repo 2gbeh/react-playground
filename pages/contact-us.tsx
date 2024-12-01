@@ -2,7 +2,7 @@ import React, { ReactElement } from "react";
 import Head from "next/head";
 //
 import { APP } from "@/constants/APP";
-import HomeLayout from "@/components/layouts/home-layout";
+import HomeLayout from "@/components/layouts/app-layout";
 import Tent from "@/components/atoms/tent";
 
 const ContactUs = () => {
