@@ -9,28 +9,24 @@ const Header: React.FC<IProps> = ({}) => {
   console.log("🚀 ~ Header");
   // renders
   return (
-    <header>
-      <Logo />
-      <nav>
-        <ul>
-          {[
-            { label: "HOME", path: "/" },
-            { label: "ABOUT", path: "/" },
-            { label: "CAR RENTALS", path: "/" },
-            { label: "LUXURY CARS", path: "/" },
-            { label: "VAN & SUV RENTALS", path: "/" },
-            { label: "LOCATION", path: "/" },
-            { label: "DEALS", path: "/" },
-            { label: "RESERVATION", path: "/" },
-            { label: "TESTIMONIALS", path: "/" },
-            { label: "CONTACT", path: "/" },
-          ].map(({ label, path }, i) => (
-            <Link key={i} href={path}>
-              {label}
-            </Link>
-          ))}
-        </ul>
-      </nav>
+    <header className="py-4">
+      <div className="flex-center-between container">
+        <Logo />
+        <nav className="">
+          <ul className="space-x-5 text-xs font-semibold">
+            {[
+              { label: "HOME", path: "/" },
+              { label: "ABOUT US", path: "/" },
+              { label: "CAR GALLERY", path: "/" },
+              { label: "CONTACT US", path: "/" },
+            ].map(({ label, path }, i) => (
+              <Link key={i} href={path} className="">
+                {label}
+              </Link>
+            ))}
+          </ul>
+        </nav>
+      </div>
     </header>
   );
 };

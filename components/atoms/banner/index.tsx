@@ -6,8 +6,11 @@ const Banner: React.FC<IProps> = ({}) => {
   console.log("🚀 ~ Banner");
   // renders
   return (
-    <section className="banner">
-      <p>BOOK ONLINE NOW. CALL (123) 456-7 8910</p>
+    <section className="bg-accent py-4">
+      <div className="container flex justify-end gap-x-2 font-bold">
+        <p className="text-white">BOOK ONLINE NOW. CALL</p>
+        <p className="text-brand">(123) 456-7 8910</p>
+      </div>
     </section>
   );
 };

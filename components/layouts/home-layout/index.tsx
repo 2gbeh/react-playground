@@ -8,10 +8,10 @@ const HomeLayout: React.FC<IProps> = ({ children }) => {
   console.log("🚀 ~ HomeLayout");
   // renders
   return (
-    <div className="min-h-full">
-      {/* <Header /> */}
+    <>
+      <Header />
       {children}
-    </div>
+    </>
   );
 };
 

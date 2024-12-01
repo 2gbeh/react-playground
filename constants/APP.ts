@@ -17,6 +17,10 @@ export const APP = {
   ),
   tel: tel("(786) 624-0376"),
   webmail: "contact@peterrenzlimoservices.com",
+  theme: {
+    brand: "#f16820",
+    accent: "#060709",
+  },
   //
   user: {
     name: "Emanuel",

@@ -8,8 +8,8 @@ const Logo: React.FC<IProps> = ({}) => {
   // renders
   return (
     <Figure
-      src="https://template68211.motopreview.com/mt-demo/68200/68211/mt-content/uploads/2018/08/mt-1582-home-logo1.png"
-      size={160}
+      src="/logo.png"
+      size={100}
       priority
     />
   );
