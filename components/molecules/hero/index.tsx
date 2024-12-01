@@ -7,7 +7,7 @@ const Hero: React.FC<IProps> = ({}) => {
   // renders
   return (
     <section
-      className="flex min-h-[480px] flex-col justify-center bg-accent"
+      className="flex min-h-[640px] flex-col justify-center bg-accent"
       style={{
         backgroundImage:
           "linear-gradient(0deg, #000000f2, #11111180), url(/uploads/hero.png)",
@@ -19,14 +19,10 @@ const Hero: React.FC<IProps> = ({}) => {
       }}
     >
       <div className="container">
-        <div className="max-w-[640px] space-y-6 text-white">
+        <div className="max-w-[520px] space-y-6 text-white">
           <hgroup className="space-y-2">
-            <h2 className="font-bold tracking-wide">
-              WE ARE OPEN 24/7 INCLUDING MAJOR HOLIDAYS
-            </h2>
-            <h1 className="text-6xl font-semibold">
-              Plan Your Trip With Auto Leasing
-            </h1>
+            <h2 className="h4">WE ARE OPEN 24/7 INCLUDING MAJOR HOLIDAYS</h2>
+            <h1 className="h1">Plan Your Trip With Auto Leasing</h1>
           </hgroup>
           <p className="text-lg">
             Rent a Car Online Today & Enjoy the Best Deals, Rates & Accessories.
