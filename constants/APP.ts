@@ -43,23 +43,4 @@ export const APP = {
     point90: "#000000e6",
     point95: "#000000f2",
   },
-  //
-  user: {
-    name: "Emanuel",
-    email: "dehphantom@yahoo.com",
-    imageUrl: "/images/my-avatar.png",
-  },
-  //
-  userNavigation: [
-    { name: "My Profile", href: "#" },
-    { name: "Settings", href: "#" },
-    { name: "Logout", href: "#" },
-  ],
-  //
-  navigation: [
-    { name: "Dashboard", href: "/dashboard", current: true },
-    { name: "Brands", href: "/brands", current: false },
-    { name: "Products", href: "/products", current: false },
-    { name: "Reports", href: "#", current: false },
-  ],
 };
