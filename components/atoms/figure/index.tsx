@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-type TSize = string | number;
+type TSize = number | `${number}` | undefined;
 
 interface IProps {
   src: string;
@@ -17,14 +17,14 @@ const Figure: React.FC<IProps> = ({ src, size, priority = false }) => {
     <Image
       src={src}
       alt=""
-      // width={width}
-      // height={height}
+      width={width}
+      height={height}
       priority={priority}
-      className="dark:invert"
-      style={{
-        width,
-        height,
-      }}
+      // className="dark:invert"
+      // style={{
+      //   width,
+      //   height,
+      // }}
     />
   );
 };

@@ -9,7 +9,7 @@ const HomeLayout: React.FC<IProps> = ({ children }) => {
   // renders
   return (
     <div className="min-h-full">
-      <Header />
+      {/* <Header /> */}
       {children}
     </div>
   );
