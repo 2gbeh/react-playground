@@ -1,4 +1,5 @@
 import React from "react";
+import { backgroundImageStyles } from "@/utils/backgroundImageStyles";
 
 interface IProps {}
 
@@ -8,14 +9,7 @@ const SectionII: React.FC<IProps> = ({}) => {
   return (
     <section
       className="flex min-h-[480px] items-center bg-accent py-4 text-white"
-      style={{
-        backgroundImage:
-          "linear-gradient(0deg, #000000e6, #11111100), url(/uploads/cover-3.png)",
-        backgroundRepeat: "no-repeat",
-        backgroundAttachment: "fixed",
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-      }}
+      style={backgroundImageStyles('/uploads/cover-3.png')}
     >
       <div className="container space-y-10 text-center">
         <hgroup className="space-y-4">

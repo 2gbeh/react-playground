@@ -1,4 +1,4 @@
-import { mailto, tel } from "@/utils";
+import { mailto, tel } from "@/utils/formatHref";
 
 export const APP = {
   url: "https://peterrenzlimoservices.com",

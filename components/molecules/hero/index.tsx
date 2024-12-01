@@ -1,4 +1,5 @@
 import React from "react";
+import { backgroundImageStyles } from "@/utils/backgroundImageStyles";
 
 interface IProps {}
 
@@ -8,14 +9,7 @@ const Hero: React.FC<IProps> = ({}) => {
   return (
     <section
       className="flex min-h-[640px] flex-col justify-center bg-accent text-white"
-      style={{
-        backgroundImage:
-          "linear-gradient(0deg, #000000e6, #11111100), url(/uploads/cover-2.png)",
-        backgroundRepeat: "no-repeat",
-        backgroundAttachment: "fixed",
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-      }}
+      style={backgroundImageStyles("/uploads/cover-2.png")}
     >
       <div className="container">
         <div className="max-w-[520px] space-y-6">
