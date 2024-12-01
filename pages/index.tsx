@@ -6,18 +6,20 @@ import HomeLayout from "@/components/layouts/home-layout";
 import Banner from "@/components/atoms/banner";
 import Hero from "@/components/molecules/hero";
 import SectionA from "@/components/molecules/section-a";
+import SectionB from "@/components/molecules/section-b";
 
 const Home = () => {
   console.log("🚀 ~ Home");
   // renders
   // <div className="flex items-center justify-center h-screen text-slate-800 flex-col">
   //   <a href={APP.mailto} target="_top">Contact Us</a>
-  //   
+  //
   // </div>
   return (
     <>
       <Hero />
-      <SectionA/>
+      <SectionA />
+      <SectionB />
     </>
   );
 };
