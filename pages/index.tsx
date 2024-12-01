@@ -3,7 +3,7 @@ import Head from "next/head";
 //
 import HomeLayout from "@/components/layouts/home-layout";
 import { APP } from "@/constants/APP";
-import Figure from "@/components/atoms/figure";
+import Figure from "@/components/figure";
 import Link from "next/link";
 
 const Home = () => {
