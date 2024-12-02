@@ -5,6 +5,10 @@ export const APP = {
   domain: "peterrenzlimoservices.com",
   name: "Peter Renz Limo Services Corp",
   name_short: "Peter Renz Limo Services",
+  description:
+    "Binary trading with Expert Mining Options is totally different from its competitors trying to achieve something special starting with the...",
+  keywords:
+    "expertminingoptions,expert mining option,expert mining options,crypto options,crypto trading,crypto broker,crypto website,binary options,binary trading",
   address: "2930 NW 55th ave apt 1B Lauderhill FL 33313",
   address_line1: "2930 NW 55th ave apt 1B",
   address_line2: "Lauderhill FL 33313",
