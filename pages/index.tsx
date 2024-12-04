@@ -7,6 +7,7 @@ import SectionB from "@/components/molecules/section-b";
 import SectionC from "@/components/molecules/section-c";
 import Testimonials from "@/components/molecules/testimonials";
 import SectionD from "@/components/molecules/section-d";
+import Footer from "@/components/atoms/footer";
 
 export default function Home() {
   console.log("🚀 ~ Home");
@@ -17,14 +18,14 @@ export default function Home() {
   // </div>
   return (
     <main>
-      <Hero />
+      {/* <Hero />
       <SectionA />
       <SectionB />
       <Tent as="partial">Gallery</Tent>
       <SectionC />
       <Testimonials />
-      <SectionD />
-      <Tent as="partial">Footer</Tent>
+      <SectionD /> */}
+      <Footer />
     </main>
   );
 }

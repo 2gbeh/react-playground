@@ -1,14 +1,14 @@
 import { mailto, tel } from "@/utils/formatHref";
-
+// Lauderhill is a city in Broward County, Florida, United States
 export const APP = {
   url: "https://peterrenzlimoservices.com",
   domain: "peterrenzlimoservices.com",
   name: "Peter Renz Limo Services Corp",
   name_short: "Peter Renz Limo Services",
   description:
-    "Binary trading with Expert Mining Options is totally different from its competitors trying to achieve something special starting with the...",
+    "Peter Renz Limo Services provides limousine and SUV chauffeured transportation in Lauderhill, Florida and the greater Bay area. Book online or call our dedicated customer service agents 24 hours a day at (786) 624-0376.",
   keywords:
-    "expertminingoptions,expert mining option,expert mining options,crypto options,crypto trading,crypto broker,crypto website,binary options,binary trading",
+    "Peter Renz Limo,Peter Renz Limo Services,Peter Renz Limo Services Corp,limousine rental service,SUV rental service,limousine rental Lauderhill,limousine rental Florida",
   address: "2930 NW 55th ave apt 1B Lauderhill FL 33313",
   address_line1: "2930 NW 55th ave apt 1B",
   address_line2: "Lauderhill FL 33313",
