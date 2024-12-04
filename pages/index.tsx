@@ -9,6 +9,7 @@ import SectionC from "@/components/molecules/section-c";
 import Testimonials from "@/components/molecules/testimonials";
 import SectionD from "@/components/molecules/section-d";
 import Footer from "@/components/atoms/footer";
+import Fab from "@/components/atoms/fab";
 
 export default function Home() {
   console.log("🚀 ~ Home");
@@ -23,6 +24,7 @@ export default function Home() {
       <Testimonials />
       <SectionD />
       <Footer />
+      <Fab />
     </main>
   );
 }
