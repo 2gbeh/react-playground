@@ -12,19 +12,15 @@ import Footer from "@/components/atoms/footer";
 export default function Home() {
   console.log("🚀 ~ Home");
   // renders
-  // <div className="flex items-center justify-center h-screen text-slate-800 flex-col">
-  //   <a href={APP.mailto} target="_top">Contact Us</a>
-  //
-  // </div>
   return (
     <main>
-       <Hero />
-      {/*<SectionA />
+      <Hero />
+      <SectionA />
       <SectionB />
-      <Tent as="partial">Gallery</Tent>*/}
+      <Tent as="partial">Gallery</Tent>
       <SectionC />
       <Testimonials />
-      <SectionD /> 
+      <SectionD />
       <Footer />
     </main>
   );

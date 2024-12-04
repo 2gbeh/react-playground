@@ -9,13 +9,13 @@ const SectionA: React.FC<IProps> = ({}) => {
   return (
     <section className="flex-col-center h-screen bg-white py-4">
       <div className="container space-y-10">
-        <h1 className="h2 text-center">Rental Vehicles</h1>
+        <h1 className="h2 text-center">Our Catalogue</h1>
         <ul className="flex-centered gap-10">
           <li>
             <figure className="relative">
               <Figure src="/uploads/section-a1.png" size={480} />
               <figcaption className="h3 absolute bottom-5 left-5 text-white">
-                Cars & Crossovers
+                Limousines
               </figcaption>
             </figure>
           </li>
@@ -31,7 +31,7 @@ const SectionA: React.FC<IProps> = ({}) => {
             <figure className="relative">
               <Figure src="/uploads/section-a3.png" size={480} />
               <figcaption className="h3 absolute bottom-5 left-5 text-white">
-                Vans & SUV
+                Luxury SUVs
               </figcaption>
             </figure>
           </li>

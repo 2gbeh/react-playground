@@ -14,25 +14,22 @@ const Footer: React.FC<IProps> = ({}) => {
         <ul className="flex gap-20 pt-20">
           <li className="flex-1 space-y-2">
             <h1 className="h3 text-brand">{APP.name_short}</h1>
-            <article className="p text-gray-200">
-              Plan Your Trip With Auto Leasing. Rent a Car Online Today & Enjoy
-              the Best Deals, Rates & Accessories.
-            </article>
+            <article className="p text-gray-200">{APP.about}</article>
           </li>
           <li className="flex-1 space-y-4">
-            <h1 className="h4">Rental Vehicles</h1>
+            <h1 className="h4">Our Services</h1>
             <ol className="p space-y-2 text-gray-200">
-              <li>Cars & Crossovers</li>
-              <li>Luxury Cars</li>
-              <li>Vans & SUV</li>
+              <li>Car Rentals</li>
+              <li>Chauffeur</li>
+              <li>Convoy/Escort</li>
             </ol>
           </li>
           <li className="flex-1 space-y-4">
-            <h1 className="h4">About Us</h1>
+            <h1 className="h4">Our Catalogue</h1>
             <ol className="p space-y-2 text-gray-200">
-              <li>Location</li>
-              <li>Deals</li>
-              <li>Reservation</li>
+              <li>Limousines</li>
+              <li>Luxury Cars</li>
+              <li>Luxury SUVs</li>
             </ol>
           </li>
           <li className="flex-1 space-y-4">
@@ -42,19 +39,23 @@ const Footer: React.FC<IProps> = ({}) => {
                 <i className="mt-2">
                   <MapPinIcon {...iconProps} />
                 </i>
-                11559 Ventura Boulevard, Studio City, CA 91604
+                {APP.address}
               </li>
               <li className="flex gap-4">
                 <i className="mt-1">
                   <SmartphoneIcon {...iconProps} />
                 </i>
-                (123) 456-7890
+                <a href={APP.tel} target="_top">
+                  {APP.phone}
+                </a>
               </li>
               <li className="flex gap-4">
                 <i className="mt-1">
                   <MailIcon {...iconProps} />
                 </i>
-                Info@demolink.org
+                <a href={APP.mailto} target="_top">
+                  {APP.email}
+                </a>
               </li>
             </ol>
           </li>
@@ -63,7 +64,8 @@ const Footer: React.FC<IProps> = ({}) => {
           className="border-t border-t-gray-400 p-5 text-center text-sm text-gray-200"
           style={{ fontStyle: "normal" }}
         >
-          &copy; 2020 Auto Leasing, All rights reserved.
+          &copy; {new Date().getFullYear()} <b>{APP.name_short}</b>. All
+          rights reserved.
         </address>
       </div>
     </footer>

@@ -1,5 +1,6 @@
 import React from "react";
 import { backgroundImageStyles } from "@/utils/backgroundImageStyles";
+import { APP } from "@/constants/APP";
 
 interface IProps {}
 
@@ -14,11 +15,11 @@ const Hero: React.FC<IProps> = ({}) => {
       <div className="container">
         <div className="max-w-[520px] space-y-6">
           <hgroup className="space-y-2">
-            <h2 className="h4">WE ARE OPEN 24/7 INCLUDING MAJOR HOLIDAYS</h2>
-            <h1 className="h1">Plan Your Trip With Auto Leasing</h1>
+            <h2 className="h4">WE ARE OPEN 24/7 INCLUDING WEEKENDS</h2>
+            <h1 className="h1">{APP.name_short}</h1>
           </hgroup>
           <p className="text-lg">
-            Rent a Car Online Today & Enjoy the Best Deals, Rates & Accessories.
+            Rent a Luxury Car Today & Enjoy the Best Deals & Rates. <br/>
           </p>
           <div className="space-x-6">
             <button className="button">VISIT CAR GALLERY</button>

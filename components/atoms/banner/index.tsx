@@ -9,7 +9,7 @@ const Banner: React.FC<IProps> = ({}) => {
   return (
     <section className="bg-accent py-4">
       <div className="container flex justify-end gap-x-2 font-bold">
-        <p className="text-white">BOOK ONLINE NOW. CALL</p>
+        <p className="text-white">RENT A LIMO TODAY, CALL</p>
         <p className="text-brand">
           <a href={APP.tel} target="_top">
             {APP.phone}

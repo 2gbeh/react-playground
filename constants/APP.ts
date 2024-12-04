@@ -5,6 +5,8 @@ export const APP = {
   domain: "peterrenzlimoservices.com",
   name: "Peter Renz Limo Services Corp",
   name_short: "Peter Renz Limo Services",
+  about:
+    "We provide limousine and SUV transportation in Lauderhill, Florida and the greater Bay area.",
   description:
     "Peter Renz Limo Services provides limousine and SUV chauffeured transportation in Lauderhill, Florida and the greater Bay area. Book online or call our dedicated customer service agents 24 hours a day at (786) 624-0376.",
   keywords:

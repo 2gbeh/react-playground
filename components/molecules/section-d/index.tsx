@@ -1,5 +1,6 @@
 import React from "react";
 import { backgroundImageStyles } from "@/utils/backgroundImageStyles";
+import { APP } from "@/constants/APP";
 
 interface IProps {}
 
@@ -12,11 +13,8 @@ const SectionD: React.FC<IProps> = ({}) => {
       style={backgroundImageStyles("/uploads/cover-6.png")}
     >
       <div className="container space-y-10">
-        <hgroup>
-          <h1 className="h3">Make a reservation today without any surprises</h1>
-          <h1 className="h3">on extra charges at the pick up location</h1>
-        </hgroup>
-        <button className="button">REQUEST A CALLBACK</button>
+        <h1 className="h3  max-w-[640px]">{APP.about}</h1>
+        <button className="button">RENT A VEHICLE</button>
       </div>
     </section>
   );
