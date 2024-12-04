@@ -13,7 +13,7 @@ const SectionD: React.FC<IProps> = ({}) => {
       style={backgroundImageStyles("/uploads/cover-6.png")}
     >
       <div className="container space-y-10">
-        <h1 className="h3  max-w-[640px]">{APP.about}</h1>
+        <h1 className="h3 sm:max-w-[640px]">{APP.about}</h1>
         <button className="button">RENT A VEHICLE</button>
       </div>
     </section>

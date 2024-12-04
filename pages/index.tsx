@@ -23,7 +23,7 @@ export default function Home() {
       <SectionC />
       <Testimonials />
       <SectionD />
-      {/* <Footer /> */}
+      <Footer />
       <Fab />
     </main>
   );

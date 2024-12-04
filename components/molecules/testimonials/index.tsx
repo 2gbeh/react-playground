@@ -7,10 +7,10 @@ const Testimonials: React.FC<IProps> = ({}) => {
   console.log("🚀 ~ Testimonials");
   // renders
   return (
-    <section className="flex-col-center h-screen bg-white">
+    <section className="flex-col-center sm:h-screen bg-white sm:py-0 py-20">
       <div className="container space-y-10 text-center">
         <h1 className="h2">Testimonials</h1>
-        <ul className="flex justify-center gap-10">
+        <ul className="flex sm:flex-row flex-col justify-center gap-10">
           {[
             {
               avatar: "/uploads/testimonial-1.png",
@@ -32,7 +32,7 @@ const Testimonials: React.FC<IProps> = ({}) => {
               contact is established, the representatives are quite friendly and helpful. Thanks."`,
             },
           ].map((item, i) => (
-            <li className="w-[30%] space-y-4" key={i}>
+            <li className="w-[100%] sm:w-[30%] space-y-4" key={i}>
               <figure className="flex-centered">
                 <Figure src={item.avatar} size={100} rounded />
               </figure>

@@ -11,7 +11,7 @@ const Footer: React.FC<IProps> = ({}) => {
   return (
     <footer className="bg-accent px-4 text-white">
       <div className="container space-y-10">
-        <ul className="flex gap-20 pt-20">
+        <ul className="flex flex-col sm:flex-row gap-10 sm:gap-20 pt-20">
           <li className="flex-1 space-y-2">
             <h1 className="h3 text-brand">{APP.name_short}</h1>
             <article className="p text-gray-200">{APP.about}</article>
@@ -64,8 +64,8 @@ const Footer: React.FC<IProps> = ({}) => {
           className="border-t border-t-gray-400 p-5 text-center text-sm text-gray-200"
           style={{ fontStyle: "normal" }}
         >
-          &copy; {new Date().getFullYear()} <b>{APP.name_short}</b>. All
-          rights reserved.
+          &copy; {new Date().getFullYear()} <b>{APP.name_short}</b>.{" "}
+          <span className="inline-block">All rights reserved.</span>
         </address>
       </div>
     </footer>
