@@ -34,6 +34,7 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
         <meta name="theme-color" content={APP.theme.accent} />
         <meta name="robots" content="index,follow" />
         <link rel="canonical" href={APP.url} />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         {/* OPEN GRAPH */}
         <meta property="og:site_name" content={APP.name_short} />
         <meta property="og:title" content={pageTitle} />

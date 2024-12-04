@@ -7,18 +7,27 @@ const Gallery: React.FC<IProps> = ({}) => {
   console.log("🚀 ~ Gallery");
   // renders
   return (
-    <section className="gallery">
-      <h1>Car Categories</h1>
-      <ul>
-        {[...Array(16)].map((_, i) => (
-          <li key={i}>
-            <figure>
-              <Figure src="/images/image-placeholder.png" size={160} />
-              <figcaption>{i + 1}. Hatchbacks</figcaption>
-            </figure>
-          </li>
-        ))}
-      </ul>
+    <section className="bg-white py-[120px]">
+      <div className="container space-y-10">
+        <h1 className="h2 text-center">Car Categories</h1>
+        <ul className="flex-centered flex-wrap gap-10">
+          {[...Array(12)].map((_, i) => {
+            let j = i + 1;
+            return (
+              <li key={i}>
+                <figure className="space-y-4">
+                  {/* <Figure src="/images/image-placeholder.png" size={240} /> */}
+                  {/* <figcaption className="h4 text-center">{name}</figcaption> */}
+                  <Figure
+                    src={`https://template68211.motopreview.com/mt-demo/68200/68211/mt-content/uploads/2018/08/mt-1582-home-categories${j}.jpg`}
+                    size={240}
+                  />
+                </figure>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     </section>
   );
 };
