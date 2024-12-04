@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 //
 import Logo from "../logo";
+import { GridIcon, MenuIcon } from "lucide-react";
 
 interface IProps {}
 
@@ -15,7 +16,10 @@ const Header: React.FC<IProps> = ({}) => {
       <div className="flex-center-between container">
         <Logo />
         <nav className="">
-          <ul className="space-x-5 text-sm font-semibold">
+          <i className="block sm:hidden">
+            <MenuIcon size={32} />
+          </i>
+          <ul className="hidden space-x-5 text-sm font-semibold sm:block">
             {[
               { label: "HOME", path: "/" },
               { label: "ABOUT US", path: "/about-us" },

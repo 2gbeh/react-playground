@@ -16,7 +16,7 @@ const SectionB: React.FC<IProps> = ({}) => {
           <h1 className="h2">10% Off on Any Rental!</h1>
           <p className="h4">First Time Renters Only!</p>
         </hgroup>
-        <div className="space-x-6">
+        <div className="space-x-6 space-y-6">
           <button className="button-alt">MAKE PAYMENT</button>
           <button className="button">RETURN POLICY</button>
         </div>

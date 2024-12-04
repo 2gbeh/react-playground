@@ -7,9 +7,13 @@ const Fab: React.FC<IProps> = ({}) => {
   console.log("🚀 ~ Fab");
   // renders
   return (
-    <div className="flex-centered absolute bottom-5 right-5 h-[56px] w-[56px] rounded-[16px] bg-brand">
+    <a
+      href="#top"
+      className="flex-centered absolute bottom-5 right-5 h-[56px] w-[56px] rounded-[16px] bg-slate-600"
+      title="Top"
+    >
       <ChevronUpIcon color="white" size={24} />
-    </div>
+    </a>
   );
 };
 

@@ -20,13 +20,17 @@
   }
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   background: #fafafa;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .container {
-  @apply w-full sm:w-[80%] mx-auto
+  @apply w-full sm:w-[80%] mx-auto px-4
 }
 
 .flex-centered {
@@ -45,6 +49,10 @@ body {
   @apply text-6xl font-black leading-[70px] tracking-normal
 }
 
+.h1b {
+  @apply text-5xl font-black leading-[60px] tracking-normal
+}
+
 .h2 {
   @apply text-4xl font-black
 }
@@ -55,6 +63,10 @@ body {
 
 .h4 {
   @apply font-black tracking-wider
+}
+
+.h4b {
+  @apply font-bold tracking-wide
 }
 
 .p {
