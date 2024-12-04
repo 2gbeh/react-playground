@@ -18,13 +18,13 @@ export default function Home() {
   // </div>
   return (
     <main>
-      {/* <Hero />
-      <SectionA />
+       <Hero />
+      {/*<SectionA />
       <SectionB />
-      <Tent as="partial">Gallery</Tent>
+      <Tent as="partial">Gallery</Tent>*/}
       <SectionC />
       <Testimonials />
-      <SectionD /> */}
+      <SectionD /> 
       <Footer />
     </main>
   );

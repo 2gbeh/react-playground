@@ -1,10 +1,11 @@
 import React from "react";
-import Logo from "../logo";
+import { MailIcon, MapPinIcon, SmartphoneIcon } from "lucide-react";
 import { APP } from "@/constants/APP";
 
 interface IProps {}
 
 const Footer: React.FC<IProps> = ({}) => {
+  const iconProps = { color: APP.theme.brand, size: 18 };
   console.log("🚀 ~ Footer");
   // renders
   return (
@@ -37,9 +38,24 @@ const Footer: React.FC<IProps> = ({}) => {
           <li className="flex-1 space-y-4">
             <h1 className="h4">Contact Us</h1>
             <ol className="p space-y-2 text-gray-200">
-              <li>11559 Ventura Boulevard, Studio City, CA 91604</li>
-              <li>(123) 456-7890</li>
-              <li>Info@demolink.org</li>
+              <li className="flex gap-4">
+                <i className="mt-2">
+                  <MapPinIcon {...iconProps} />
+                </i>
+                11559 Ventura Boulevard, Studio City, CA 91604
+              </li>
+              <li className="flex gap-4">
+                <i className="mt-1">
+                  <SmartphoneIcon {...iconProps} />
+                </i>
+                (123) 456-7890
+              </li>
+              <li className="flex gap-4">
+                <i className="mt-1">
+                  <MailIcon {...iconProps} />
+                </i>
+                Info@demolink.org
+              </li>
             </ol>
           </li>
         </ul>
