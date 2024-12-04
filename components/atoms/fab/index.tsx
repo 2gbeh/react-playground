@@ -9,7 +9,7 @@ const Fab: React.FC<IProps> = ({}) => {
   return (
     <a
       href="#top"
-      className="flex-centered absolute bottom-5 right-5 h-[56px] w-[56px] rounded-[16px] bg-slate-600"
+      className="flex-centered fixed bottom-5 right-5 h-[56px] w-[56px] rounded-[16px] bg-slate-600"
       title="Top"
     >
       <ChevronUpIcon color="white" size={24} />

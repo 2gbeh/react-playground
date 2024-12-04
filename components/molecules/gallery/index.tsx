@@ -11,7 +11,7 @@ const Gallery: React.FC<IProps> = ({}) => {
   // renders
   return (
     <section className="bg-white py-[120px]">
-      <div className="container space-y-10">
+      <div className="container_ space-y-10 px-4">
         <h1 className="h2 text-center">Car Gallery</h1>
         <ul className="flex-centered flex-wrap gap-10">
           {[...Array(12)].map((_, i) => {
@@ -23,7 +23,7 @@ const Gallery: React.FC<IProps> = ({}) => {
                   {/* <figcaption className="h4 text-center">{name}</figcaption> */}
                   <Figure
                     src={`https://template68211.motopreview.com/mt-demo/68200/68211/mt-content/uploads/2018/08/mt-1582-home-categories${j}.jpg`}
-                    size={isMobile ? 480 : 240}
+                    size={isMobile ? 480 : 360}
                   />
                 </figure>
               </li>
